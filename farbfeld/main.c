@@ -22,6 +22,7 @@ int main()
 	
 	farbfeld_read("test.ff", &width, &height, &ptr);
 	printf("%d %d\n", width, height);
+	free(ptr);
 
 	return 0;
 }
