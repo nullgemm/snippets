@@ -21,7 +21,7 @@ uint8_t farbfeld_write(
 	}
 
 	uint32_t size = ((uint32_t) 4) * width * height;
-	uint8_t ok = fwrite("farbfeld", 8, 1, fp);
+	int ok = fwrite("farbfeld", 8, 1, fp);
 
 	if (ok == 0)
 	{
@@ -81,7 +81,7 @@ uint8_t farbfeld_read(
 	}
 
 	char header[8] = {'\0'};
-	uint8_t ok = fread(header, 8, 1, fp);
+	int ok = fread(header, 8, 1, fp);
 
 	if ((ok == 0) || (strncmp(header, "farbfeld", 8) != 0))
 	{
