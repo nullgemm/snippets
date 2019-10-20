@@ -120,7 +120,7 @@ uint8_t farbfeld_read(
 
 	for (uint32_t i = 0; i < size; ++i)
 	{
-		ok = fread(&value, 2, 1, fp);
+		ok = fread(&value, 1, 2, fp);
 
 		if (ok != 2)
 		{
